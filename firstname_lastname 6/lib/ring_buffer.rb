@@ -13,6 +13,7 @@ class RingBuffer
 
   # O(1)
   def [](index)
+    index = @length + index if index < 0
     if !@store[@start_idx + index]
       raise 'index out of bounds'
     else
@@ -22,6 +23,7 @@ class RingBuffer
 
   # O(1)
   def []=(index, val)
+    index = @length + index if index < 0
     @store[@start_idx + index] = val
   end
 
