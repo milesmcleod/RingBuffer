@@ -1,4 +1,5 @@
 require "ring_buffer"
+require 'byebug'
 
 describe RingBuffer do
   it "starts out empty" do
